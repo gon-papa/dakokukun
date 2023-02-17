@@ -58,10 +58,10 @@ func main() {
 	page.Screenshot(os.Getenv("IMAGE_PATH"))
 
 	// 始業打刻チェック
-	_, err := page.Find("#chkPrintOD").Text()
+	_, err := page.Find(".tableBdr2").Text()
 	if err != nil {
-		log.Fatal("正常にログインできていません。")
+		log.Printf("正常に打刻できていません。err: %+v", err)
 	} else {
-		log.Println("ログインが完了しました。")
+		log.Println("打刻が完了しました。")
 	}
 }
