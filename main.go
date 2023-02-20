@@ -51,14 +51,14 @@ func main() {
 		page.Find("#ctl00_ContentPlaceHolder1_ibtnIn3").Click()
 	} else {
 		// 就業打刻
-		page.Find("#ctl00_ContentPlaceHolder1_imgOut3").Click()
+		page.Find("#ctl00_ContentPlaceHolder1_ibtnOut4").Click()
 	}
 
 	// 結果のスクショ
 	page.Screenshot(os.Getenv("IMAGE_PATH"))
 
 	// 始業打刻チェック
-	_, err := page.Find(".tableBdr2").Text()
+	_, err := page.Find(".cGray").Text()
 	if err != nil {
 		log.Printf("正常に打刻できていません。err: %+v", err)
 	} else {
